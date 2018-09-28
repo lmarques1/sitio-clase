@@ -1,1 +1,31 @@
 /*index css*/
+/*declarar variable en la raíz (dos guiones medios para que se variable*/
+:root /*raíz*/
+    {
+        --blanco: #FFF;
+        --negro: #000;
+        --naranja: #F90;
+    }
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+    {
+        font-family: arial;
+        background-image: url(pattern.jpg)
+    }
+.cabecera
+    {
+        margin: auto;
+        max-width: 1000px;
+    }
+.contenido
+    {
+        margin: auto;
+        max-width: 1000px;
+        /*usamos la variable*/
+        background-color: var(--blanco);
+    }
