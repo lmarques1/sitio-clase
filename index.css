@@ -1,10 +1,12 @@
 /*index css*/
+/*bem cssom para ver como organizar el css*/
 /*declarar variable en la raíz (dos guiones medios para que se variable*/
 :root /*raíz*/
     {
         --blanco: #FFF;
         --negro: #000;
         --naranja: #F90;
+        --gris: #333;
     }
 *
 {
@@ -17,15 +19,136 @@ body
         font-family: arial;
         background-image: url(pattern.jpg)
     }
-.cabecera
-    {
-        margin: auto;
-        max-width: 1000px;
-    }
 .contenido
     {
+        border-radius: 8px 8px 0 0; /*se agrega a la sección que tiene el fondo blanco. En este caso contenido*/
         margin: auto;
         max-width: 1000px;
         /*usamos la variable*/
         background-color: var(--blanco);
+        
+    }
+.cabecera
+    {
+        margin: auto;
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 15px;
+    }
+
+.cabecera h1
+    {
+        color: #F90;
+    }
+.botonera 
+    {
+        background-color: #F90;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: 30px;
+        padding: 10px 40px;
+        display: flex;
+        
+    }
+.botonera li
+    {
+        list-style-type: none;
+        display: inline;
+       
+        
+    }
+
+.botonera a   {
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        border-right: 1px solid #FFF;
+        padding: 7px 12px;
+    }
+.nav-lista a
+    {
+        display: inline-block; /*colocar display:block a la a si es un elemento botonera*/
+    }
+.nav-lista a:hoover
+    {
+        text-decoration: underline;
+    }
+
+    /*SLIDER / carrousel*/
+
+.slider
+    {
+        text-align: center; /*la imagen es elemento de línea asi que se puede centrar con tex-align: center*/
+        margin-bottom: 50px; /*se agrega margin-bottom en las secciones para que no se modifiquen en la siguiente página*/
+    }
+
+    /*ZONA*/
+
+.zona
+    {
+        display: flex;
+    }
+
+    }
+.izq
+    {
+        
+        flex-grow: 1;
+        margin-right: 30px;
+        
+
+    }
+.der
+    {
+        
+        flex-grow: 1;
+        margin-left: 30px;
+        display: grid; /*sirve para indicar que vamos a usar grillas despues se especifica como son*//*zona productos grillas: se aplican a los elementos padres*/
+        grid-template-columns: 1fr 1fr; /*fr fragment parecido al porcentaje pero se adapta a los gaps entre las columnas, las dos van a medir lo mismo, realiza la cuenta automáticamente 
+        de cuánto debe medir cada uno. Si colocas repeat (5, 1fr) te repite 5 columnas no hace falta que coloques 5 veces 1fr. Grid garden para aprender grid. Grid by example*/
+        grid-gap: 20px; /*agrega espacio en vertical y horizontal entre las grillas*/
+        /*si lo queres hacer con flex-box agregar display: flex; y a producto agregar width:50% y ver el espacio entre los dos*/
+        width: 70%;
+       
+    }
+.izquierda li
+    {
+        list-style-type: none;
+        margin-left: 25px;
+        padding: 5px;
+      
+    }
+.izquierda a
+    {
+        text-decoration: none;
+        color: var(--gris);
+        border-bottom: 1px dashed var(--gris);
+        display: block;
+
+    }
+.izq h2
+    {
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+
+    /*producto*/
+
+.producto img   
+     {
+        float: left;
+        margin-right: 12px;
+        /*para centrar la imagen es mejor trabajar con flexbox, modificar el html para agregar un padre y trabajar sobre el*/
+       
+    }
+.producto p  
+    {
+       float: left;
+       width: 50%;
+   }
+.producto h2
+    {
+        margin-bottom: 16px;
     }
